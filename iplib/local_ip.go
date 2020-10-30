@@ -1,4 +1,4 @@
-package ip
+package iplib
 
 import (
 	"net"
