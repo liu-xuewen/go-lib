@@ -12,8 +12,22 @@ func GetString(ctx context.Context, key string, defaultVal string) string {
 	return defaultVal
 }
 
-// GetInt get string or default in ctx
+// GetInt get GetInt or default in ctx
 func GetInt(ctx context.Context, key string, defaultVal int) int {
+	v := ctx.Value(key)
+	if v != nil {
+		value, ok := v.(int)
+		if ok {
+			return value
+		}
+		return defaultVal
+	}
+
+	return defaultVal
+}
+
+// GetUint get GetUint or default in ctx
+func GetUint(ctx context.Context, key string, defaultVal int) int {
 	v := ctx.Value(key)
 	if v != nil {
 		value, ok := v.(int)
