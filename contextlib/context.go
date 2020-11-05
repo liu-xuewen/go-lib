@@ -27,10 +27,10 @@ func GetInt(ctx context.Context, key string, defaultVal int) int {
 }
 
 // GetUint get GetUint or default in ctx
-func GetUint(ctx context.Context, key string, defaultVal int) int {
+func GetUint(ctx context.Context, key string, defaultVal uint) uint {
 	v := ctx.Value(key)
 	if v != nil {
-		value, ok := v.(int)
+		value, ok := v.(uint)
 		if ok {
 			return value
 		}
