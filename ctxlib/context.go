@@ -1,12 +1,12 @@
-package contextlib
+package ctxlib
 
 import "context"
 
-// CxtKey cxt Key
-type CxtKey string
+// String cxt String
+type String string
 
 // GetString get string or default in ctx
-func GetString(ctx context.Context, key CxtKey, defaultVal string) string {
+func GetString(ctx context.Context, key String, defaultVal string) string {
 	v := ctx.Value(key)
 	if v != nil {
 		return v.(string)
@@ -16,7 +16,7 @@ func GetString(ctx context.Context, key CxtKey, defaultVal string) string {
 }
 
 // GetInt get GetInt or default in ctx
-func GetInt(ctx context.Context, key CxtKey, defaultVal int) int {
+func GetInt(ctx context.Context, key String, defaultVal int) int {
 	v := ctx.Value(key)
 	if v != nil {
 		value, ok := v.(int)
@@ -30,7 +30,7 @@ func GetInt(ctx context.Context, key CxtKey, defaultVal int) int {
 }
 
 // GetUint get GetUint or default in ctx
-func GetUint(ctx context.Context, key CxtKey, defaultVal uint) uint {
+func GetUint(ctx context.Context, key String, defaultVal uint) uint {
 	v := ctx.Value(key)
 	if v != nil {
 		value, ok := v.(uint)
@@ -44,7 +44,7 @@ func GetUint(ctx context.Context, key CxtKey, defaultVal uint) uint {
 }
 
 // GetUint64 get uint64 or default in ctx
-func GetUint64(ctx context.Context, key CxtKey, defaultVal uint64) uint64 {
+func GetUint64(ctx context.Context, key String, defaultVal uint64) uint64 {
 	v := ctx.Value(key)
 	if v != nil {
 		value, ok := v.(uint64)
