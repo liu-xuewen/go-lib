@@ -2,8 +2,11 @@ package contextlib
 
 import "context"
 
+// CxtKey cxt Key
+type CxtKey string
+
 // GetString get string or default in ctx
-func GetString(ctx context.Context, key string, defaultVal string) string {
+func GetString(ctx context.Context, key CxtKey, defaultVal string) string {
 	v := ctx.Value(key)
 	if v != nil {
 		return v.(string)
@@ -13,7 +16,7 @@ func GetString(ctx context.Context, key string, defaultVal string) string {
 }
 
 // GetInt get GetInt or default in ctx
-func GetInt(ctx context.Context, key string, defaultVal int) int {
+func GetInt(ctx context.Context, key CxtKey, defaultVal int) int {
 	v := ctx.Value(key)
 	if v != nil {
 		value, ok := v.(int)
@@ -27,7 +30,7 @@ func GetInt(ctx context.Context, key string, defaultVal int) int {
 }
 
 // GetUint get GetUint or default in ctx
-func GetUint(ctx context.Context, key string, defaultVal uint) uint {
+func GetUint(ctx context.Context, key CxtKey, defaultVal uint) uint {
 	v := ctx.Value(key)
 	if v != nil {
 		value, ok := v.(uint)
@@ -41,7 +44,7 @@ func GetUint(ctx context.Context, key string, defaultVal uint) uint {
 }
 
 // GetUint64 get uint64 or default in ctx
-func GetUint64(ctx context.Context, key string, defaultVal uint64) uint64 {
+func GetUint64(ctx context.Context, key CxtKey, defaultVal uint64) uint64 {
 	v := ctx.Value(key)
 	if v != nil {
 		value, ok := v.(uint64)
