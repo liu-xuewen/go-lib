@@ -7,7 +7,7 @@ import (
 
 // Base Base
 type Base struct {
-	CreatedAt timelib.JsonTime  `sql:"index"`
-	UpdatedAt timelib.JsonTime
+	CreatedAt timelib.JsonTime  `gorm:"type:timestamp;index" json:"created_at"`
+	UpdatedAt timelib.JsonTime  `gorm:"type:timestamp" json:"updated_at"`
 	DeletedAt *time.Time `sql:"index"`
 }
